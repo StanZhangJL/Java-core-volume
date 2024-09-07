@@ -1,5 +1,8 @@
 import java.awt.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -34,8 +37,20 @@ public class Main {
 
         //自动装箱
         Integer integer2 = 30;
-
         //自动拆箱
         int nums1 = integer2;
+
+        System.out.println("List 的使用==================================================");
+
+        // 如果要将一个数组转为list 必须使用包装类,添加后不能对元素修改，否者会报错，
+        // int[] ints = {15,16,98,44};
+        Integer[] ints = {15,16,98,44};
+        List list = Arrays.asList(ints);
+        list.stream().forEach(System.out::println);
+
+        // 如果需要进行添加删除使用new ArrayList<>() 让后将Arrays.asList()传入
+        List lists = new ArrayList(Arrays.asList(ints));
+        lists.stream().forEach(System.out::println);
+
     }
 }
