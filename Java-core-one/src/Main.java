@@ -52,14 +52,5 @@ public class Main {
         List lists = new ArrayList(Arrays.asList(ints));
         lists.stream().forEach(System.out::println);
 
-        //TODO 这行代码 Arrays.asList()返回的是一个固定的list 如果add.("stan") 会报错UnsupportedOperationException
-        List<String> stringArr = Arrays.asList("Apple", "banana", "Orange", "apple", "Banana", "orange");
-        //stringArr.add("stan");
-        stringArr.stream().forEach(System.out::println);
-
-        //解决方法： 改进建议：使用 new ArrayList<>(Arrays.asList(...)) 可变列表
-        List<String> stringArrs =
-                new ArrayList<>(Arrays.asList("Apple", "banana", "Orange", "apple", "Banana", "orange"));
-
     }
 }
