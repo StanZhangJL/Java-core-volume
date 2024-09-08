@@ -10,16 +10,16 @@ import java.util.stream.Stream;
 public class ObjectStream {
     public static void main(String[] args) {
         Stream<Person> generate = Stream.generate(new Supplier<Person>() {
-            private int id = 1;
+            private int id = 0;
 
             @Override
             public Person get() {
-                return new Person(id++, "stanPerson" + id);
+                return new Person(++id, "stanPerson" + id);
             }
         });
 
         //输出对象流
-        generate.limit(3)
+        generate.limit(2)
                 .forEach(System.out::println);
 
 
