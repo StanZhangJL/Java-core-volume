@@ -26,8 +26,7 @@ public class Work {
     public static void main(String[] args) {
         System.out.println("Main================== "+Thread.currentThread().getName());
         Work work = new Work();
-        work.doWork(msg -> System.out.println("Callback received: " + msg));
-
+        work.doWork(msg -> System.out.println("Callback received: " + msg + Thread.currentThread().getName()));
         System.out.println("Main thread is free to do other things...========"+Thread.currentThread().getName());
 
     }
