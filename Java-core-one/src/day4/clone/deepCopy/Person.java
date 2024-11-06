@@ -59,10 +59,7 @@ public class Person implements Cloneable {
         stan.setAge(18);
 
         Person clone = (Person) stan.clone();
-        String name1 = clone.name;
-
         System.out.println(clone.name);
-
         System.out.println("Original: " + stan);
         System.out.println("Cloned: " + clone);
 
