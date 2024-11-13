@@ -7,11 +7,12 @@ public class Work {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println("Doing some work in a separate thread...==============" + Thread.currentThread().getName());
+                System.out.println("Doing Some work in a separate Thread...==============" + Thread.currentThread().getName());
                 // 模拟执行一些任务
                 try {
-                    Thread.sleep(20000);  // 模拟耗时任务
+                    Thread.sleep(10000);  // 模拟耗时任务
                 } catch (InterruptedException e) {
+                    System.out.println("Errer message:"+ e.getMessage());
                     System.out.println("get Cause" + e.getCause());
                     e.printStackTrace();
                 }
