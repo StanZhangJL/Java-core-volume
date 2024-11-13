@@ -12,6 +12,7 @@ public class Work {
                 try {
                     Thread.sleep(20000);  // 模拟耗时任务
                 } catch (InterruptedException e) {
+                    System.out.println("get Cause" + e.getCause());
                     e.printStackTrace();
                 }
 
