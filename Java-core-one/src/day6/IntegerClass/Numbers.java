@@ -11,14 +11,22 @@ public class Numbers {
         //自动拆箱
         int nums1 = integer2;
 
-        String str = "55";
-        int nums = 66;
-
         //valueOf(int i): 返回一个表示指定 int 值的 Integer 实例。
+        int nums = 66;
         Integer integer = Integer.valueOf(nums);
 
         //valueOf(String s): 返回一个保存指定的字符串值的 Integer 对象。
+        String str = "55";
+
+        //注意这里的indexof返回的是字符串 str中下标0的字符串转成int
+        int i4 = str.indexOf(0);
+
+        //将字符串转成int类型在自动装箱
         Integer integer1 = Integer.valueOf(str);
+
+        //将Int类型转成字符串
+        String s = String.valueOf(88);
+
 
         //parseInt(String s): 将字符串解析为 int 类型。
         int i = Integer.parseInt(str);
