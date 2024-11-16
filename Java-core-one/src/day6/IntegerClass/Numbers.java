@@ -57,6 +57,10 @@ public class Numbers {
 
         int i3 = n.intValue();
 
+        //避免空指针
+        Integer num = null;
+        int numInt = (num != null) ? num : 0; // 设置默认值
+
         //在一个表达式中 如果混用了Integer和double类型，
         // Integer值会拆箱，提升为double在装箱为Double
 
