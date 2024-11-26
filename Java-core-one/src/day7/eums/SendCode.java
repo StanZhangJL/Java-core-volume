@@ -4,6 +4,7 @@ public enum SendCode {
     SUCCESS("请求成功",200),
     ERRO("请求失败",400),
     FLID("内部错误",500);
+
     private String desction;
     private int code;
 
