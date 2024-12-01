@@ -21,8 +21,7 @@ public class DynamicsArray {
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 4, 5};
         a = (int[]) goodCopyOf(a, 10);
-        System.out.println("Arrays.toString=====" + Arrays.toString(a));
-
+        System.out.println("Arrays.toString=====" + Arrays.toString(a) + "arr length=" + a.length);
 
         for (int i : a) {
             System.out.println(i);

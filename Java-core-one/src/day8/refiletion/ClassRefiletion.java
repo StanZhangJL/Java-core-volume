@@ -3,10 +3,7 @@ package day8.refiletion;
 import day5.absclass.Emps;
 import day5.absclass.Student;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import java.lang.reflect.*;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -30,14 +27,14 @@ public class ClassRefiletion {
             // newInstance()已经弃用 使用下面这种代替
             Object object = aClass.getDeclaredConstructor().newInstance();
 
-            //获取一个构造器对象 通过构造器类型对象  然后使用newInstance来构造一个对象实例
+            //获取一个 无参构造器对象 通过构造器类型对象  然后使用newInstance来构造一个对象实例
             Object object1 = aClass.getConstructor().newInstance();
             System.out.println("object1 =======" + object1);
 
             //getConstructor用法 有参构造器
             Constructor<?> constructor = aClass.getConstructor(String.class, int.class, String.class);
             // 允许访问非公共构造函数
-            constructor.setAccessible(true);
+           // constructor.setAccessible(true);
             Object object2 = constructor.newInstance("MIKE", 15, "c++");
             System.out.println("object2 =======" + object2);
 
@@ -49,21 +46,53 @@ public class ClassRefiletion {
             // IllegalAccessException
             // InvocationTargetException
 
+            //TODO setAccessible()方法可以用在field,Method,Constructor,来覆盖对象的访问控制
             Emps nancy = new Emps("Nancy", 18);
             Class<? extends Emps> aClass1 = nancy.getClass();
-            Field ageField = aClass1.getField("name");
-            //通过反射的get方法获取当前字段的值
-            Object object3 = ageField.get(nancy);
-            System.out.println("object3==========" + object3);
+            Field ageField1 = aClass1.getField("name");
+            Field ageField2 = aClass1.getField("age");
+
+            //1.通过反射的get方法获取当前字段的值
+            Object object3 = ageField1.get(nancy);
+            Object object3s = ageField2.get(nancy);
+            System.out.println("object3==========name:" + object3 + "  age:"+ object3s);
+
+            //2.通过反射的set方法设置当前字段的值
+            Emps nancys = new Emps("Nancy", 22);
+            Class<? extends Emps> aClasss = nancys.getClass();
+            // 因为属性是私有的 所以需要设置 可访问权限setAccessible
+            aClasss.getField("name").setAccessible(true);
+            aClasss.getField("name").set(nancys, "Stan");
+            Object age1 = aClasss.getField("name").get(nancys);
+            System.out.println("stan: " + age1);
+
+
+            //获取当前类的名, 包名
+            //String nameClass = aClass1.getDeclaringClass().getName();
+            String packageName = aClass1.getPackageName();
+            String className = aClass1.getName();
+            System.out.println( " 包名：" + packageName + " 类.名 ：" + className);
+
 
             //DOg
             Dog dog = new Dog("花花", 19, 'N');
             Class<? extends Dog> aClass2 = dog.getClass();
 
-            //通过反射的get方法获取当前字段的值
+            // 以下三个方法将分别返回类的中声明的全部字段丶全部方法丶全部构造方法
+            Field[] declaredFields = Dog.class.getDeclaredFields();
+            Method[] declaredMethods = Dog.class.getDeclaredMethods();
+            Constructor<?>[] declaredConstructors = Dog.class.getDeclaredConstructors();
+
+            // 通过反射的get方法获取当前字段的值
             // 因为属性是私有的 所以需要设置 可访问权限setAccessible
             Field age = aClass2.getDeclaredField("age");
             //age.setAccessible(true);
+
+            String type = Modifier.toString(age.getModifiers());
+            String fieldName = age.getName();
+            String fieldTypeName = age.getType().getName();
+            System.out.println("字段修饰符: " + type + " 字段名：" +fieldName +" 字段的类型" + fieldTypeName);
+
 
             //TODO : JAVA 9中使用这个更加安全
             // trySetAccessible 方法尝试将字段设置为可访问的使用 trySetAccessible 方法可以更安全地尝试访问私有字段
@@ -106,6 +135,32 @@ public class ClassRefiletion {
             System.out.println(nancy1);
 
             Method getAge = Emps.class.getMethod("getAge");
+            //getModifiers 返回一个整数用不用的0/1位描述所使用的修饰符 如public static
+            int modifiers = getAge.getModifiers();
+            System.out.println("modifiers:" + modifiers);
+
+            //Modifier isPublic静态方法判断方法或者构造器是public
+            boolean aFinal = Modifier.isFinal(getAge.getModifiers());
+            boolean aPublic = Modifier.isPublic(getAge.getModifiers());
+            boolean aPrivate = Modifier.isPrivate(getAge.getModifiers());
+            System.out.println("aFinal: "+ aFinal + " aPublic: " + aPublic + " aPrivate: " + aPrivate);
+
+            //获取方法修饰符 Modifier.toString 打印结果 public
+            String string = Modifier.toString(getAge.getModifiers());
+            System.out.println("Modifier.toString: " + string);
+
+            //获取方法返回类型
+            String name = getAge.getReturnType().getName();
+            System.out.println("返回类型 " + name);
+
+            //获取方法参数类型
+            Class<?>[] parameterTypes = getAge.getParameterTypes();
+            for (Class<?> parameterType : parameterTypes) {
+                System.out.println(parameterType.getName());
+
+            }
+
+
             Object invoke = getAge.invoke(nancy);
             System.out.println(invoke);
 
