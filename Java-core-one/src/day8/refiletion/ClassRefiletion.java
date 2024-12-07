@@ -88,6 +88,7 @@ public class ClassRefiletion {
             Field age = aClass2.getDeclaredField("age");
             //age.setAccessible(true);
 
+            //获取一个类中字段的修饰符 字段名 字段类型
             String type = Modifier.toString(age.getModifiers());
             String fieldName = age.getName();
             String fieldTypeName = age.getType().getName();
@@ -129,10 +130,10 @@ public class ClassRefiletion {
             // 输出数组中的元素
             System.out.println(Arrays.toString(ints));
 
-            //通过反射获取Method对象 获取getName方法 通过invoke方法获得value
+            //通过反射获取Method对象 获取getName方法的返回值  通过invoke方法获得value
             Method getName = Emps.class.getMethod("getName");
             String nancy1 = (String)getName.invoke(nancy);
-            System.out.println(nancy1);
+            System.out.println("nancy1 :" + nancy1);
 
             Method getAge = Emps.class.getMethod("getAge");
             //getModifiers 返回一个整数用不用的0/1位描述所使用的修饰符 如public static

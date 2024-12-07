@@ -6,6 +6,9 @@ public class Emps extends Person{
         super(name, age);
     }
 
+    public Emps() {
+    }
+
     @Override
     public String lastName() {
         return null;
