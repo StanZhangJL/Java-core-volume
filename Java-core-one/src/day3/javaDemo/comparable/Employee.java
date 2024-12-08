@@ -1,4 +1,4 @@
-package day3.javaDemo;
+package day3.javaDemo.comparable;
 
 import java.time.LocalDate;
 import java.util.Objects;
