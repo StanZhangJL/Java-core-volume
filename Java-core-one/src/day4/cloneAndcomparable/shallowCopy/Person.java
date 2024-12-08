@@ -1,4 +1,4 @@
-package day4.clone.shallowCopy;
+package day4.cloneAndcomparable.shallowCopy;
 
 import java.util.ArrayList;
 import java.util.Comparator;

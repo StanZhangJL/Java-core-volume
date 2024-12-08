@@ -1,4 +1,4 @@
-package day4.clone.deepCopy;
+package day4.cloneAndcomparable.deepCopy;
 
 public class Person implements Cloneable {
     private String name;

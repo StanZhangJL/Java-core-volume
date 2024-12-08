@@ -1,4 +1,4 @@
-package day4.clone.deepCopy;
+package day4.cloneAndcomparable.deepCopy;
 
 public class Address implements Cloneable{
     private String city;
