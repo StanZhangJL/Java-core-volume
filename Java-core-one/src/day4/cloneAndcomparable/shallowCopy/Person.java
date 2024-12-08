@@ -42,7 +42,7 @@ public class Person implements Cloneable,Comparable<Person> {
         return super.clone();
     }
 
-    //通过实现 Comparable 接口并重写 compareTo() 方法，可以定义对象的自然排序顺序。
+    // TODO 通过实现 Comparable 接口并重写 compareTo() 方法，可以定义对象的自然排序顺序。
     @Override
     public int compareTo(Person person) {
         return Integer.compare(this.age, person.age);
