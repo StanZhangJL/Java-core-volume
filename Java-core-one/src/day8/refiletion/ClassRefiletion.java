@@ -52,6 +52,10 @@ public class ClassRefiletion {
             Field ageField1 = aClass1.getField("name");
             Field ageField2 = aClass1.getField("age");
 
+            //反射获取类对象的方法
+            Class<?> empsClass1 = Class.forName("day5.absclass.Emps");
+            Class<Emps> empsClass2 = Emps.class;
+
             //1.通过反射的get方法获取当前字段的值
             Object object3 = ageField1.get(nancy);
             Object object3s = ageField2.get(nancy);
