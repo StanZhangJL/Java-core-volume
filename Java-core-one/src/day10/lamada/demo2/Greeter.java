@@ -1,9 +1,8 @@
-package day10.lamada;
+package day10.lamada.demo2;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.time.Instant;
 
 public class Greeter{

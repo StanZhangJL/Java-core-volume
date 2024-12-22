@@ -1,10 +1,6 @@
-package day9.interfaces;
+package day9.interfaces.interfacesdemo.demo02;
 
-import java.io.IOException;
-import java.net.URI;
-import java.nio.file.*;
-
-public class PcitImport implements Pcit {
+public class PcitImpl implements Pcit {
     @Override
     public int getPc(int id) {
         return 0;

@@ -1,9 +1,6 @@
-package day9.interfaces;
+package day9.interfaces.interfacesdemo.demo03;
 
 import javax.swing.*;
-import java.nio.file.Path;
-import java.util.AbstractCollection;
-import java.util.Collection;
 
 public interface InterfaceStaic extends SwingConstants{
 

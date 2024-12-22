@@ -1,4 +1,4 @@
-package day10.lamada;
+package day10.lamada.demo4;
 
 
 import day5.absclass.Student;

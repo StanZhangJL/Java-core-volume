@@ -1,7 +1,6 @@
-package day10.lamada;
+package day10.lamada.demo3;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionListener;
 import java.time.Instant;
 import java.util.Arrays;
@@ -9,6 +8,13 @@ import java.util.Comparator;
 import java.util.Date;
 
 public class Lamada {
+    /**
+     * 1.Lambda表达式可以很方便地实现只有一个抽象方法的接口，也就是我们常说的函数式接口。
+     *
+     * @param args
+     */
+
+
     public static void main(String[] args) {
         ActionListener actionListener = (e) -> System.out.println(Instant.ofEpochMilli(e.getWhen()));
         Comparator<String> comparator = (fist, send) -> fist.length() - send.length();

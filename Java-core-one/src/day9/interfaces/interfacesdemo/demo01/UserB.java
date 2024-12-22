@@ -1,4 +1,4 @@
-package day9.interfaces.Interfaces;
+package day9.interfaces.interfacesdemo.demo01;
 
 public interface UserB {
     default  String getId(){
