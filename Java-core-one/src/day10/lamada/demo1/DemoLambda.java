@@ -73,6 +73,11 @@ public class DemoLambda {
         // 总而言之，Lambda 表达式提供了一种简洁的语法糖来实现函数式接口， 它本质上是生成了一个实现了该接口的匿名类的实例.
         // 这个匿名类会重写（实现）函数式接口中的抽象方法，而 Lambda 表达式的主体（a + b：表达式主体）部分就是这个重写方法的具体实现。
 
+        //TODO
+        // 1. sort()方法  static void sort(Object[] a) 对数组a中的元素进行排序时，
+        // 要求数组中的元素必须属于实现了comparable接口的类，并且元素之间是可比较的.
+        // 2. static int compar（int x, int y）;r 如果x < y 返回负数，相等返回0，否则返回正数.
+
     }
 
 
