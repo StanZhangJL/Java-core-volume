@@ -1,9 +1,11 @@
-package day9.interfaces.interfacesdemo.comparable;
+package day10.lamada.comparable;
 
-public class Employee implements Comparable<Employee> {
+public class Employee  implements Comparable<Employee> {
 
     private String name;
     private double salary;
+
+    public Employee() {}
 
     public Employee(String name, double salary) {
         this.name = name;
