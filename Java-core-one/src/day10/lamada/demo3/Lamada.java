@@ -16,7 +16,9 @@ public class Lamada {
 
 
     public static void main(String[] args) {
+
         ActionListener actionListener = (e) -> System.out.println(Instant.ofEpochMilli(e.getWhen()));
+
         Comparator<String> comparator = (fist, send) -> fist.length() - send.length();
 
         String[] strings = {"java", "c++", "php", "python", "go"};

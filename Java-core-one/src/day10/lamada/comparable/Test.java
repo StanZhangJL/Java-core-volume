@@ -5,6 +5,13 @@ public class Test {
         Employee employee = new Employee();
 
         //使用instanceof 来检查Employee 是否实现了Comparable接口
+
+        /**
+         *  instanceof 的参数顺序是固定的：
+         *  左边(employee)是一个对象引用。
+         *  右边（Comparable）是一个类型或接口。
+         */
+
         if(employee instanceof Comparable){
             System.out.println("employee is Comparable=================");
         }

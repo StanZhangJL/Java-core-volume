@@ -48,9 +48,9 @@ public class Person implements Cloneable {
 
     // TODO  实现Cloneable 接口 重新clone 方法()进行深拷贝对象副本
     public Person clone() throws CloneNotSupportedException {
-        Person cloned  = (Person) super.clone();
-        cloned.address = (Address) address.clone();
-        return cloned;
+        Person person  = (Person) super.clone();
+        person.address = (Address) address.clone();
+        return person;
     };
 
     public static void main(String[] args) throws CloneNotSupportedException {
